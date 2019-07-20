@@ -1,0 +1,60 @@
+<style type="text/css">
+    nav {
+        visibility: none !important;
+        display: none !important;
+    }
+    
+    body {
+        padding: 0 !important;
+        background-color: #fff !important;
+    }
+</style>
+
+<main id="pharmacy-dashboard">
+    <section id="side-panel">
+        <ul class="nav flex-column" id="pharmacy-info">
+            <li class="nav-item">
+                <div id="pharmacy-avatar">
+                    <i class="fas fa-mortar-pestle"></i>
+                </div>
+                
+                <h4>
+                    <%= current_pharmacy.pharmacy_name%>
+                </h4>
+            </li>
+        </ul>
+        
+        <ul class="nav flex-column" id="nav-items">
+            <li class="nav-item">
+                <a class="nav-link <%= "active" if path_info == "/" %>" href="/">
+                    <i class="far fa-chart-bar"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <%= is_active("refill") %>" href="/requests/refill">
+                    <i class="fas fa-prescription"></i> Refill Requests
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <%= is_active("status") %>" href="/requests/status">
+                    <i class="fas fa-file-prescription"></i> Status Checks
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <%= is_active("settings") %>" href="/pharmacy/settings">
+                    <i class="fas fa-sliders-h"></i> Settings
+                </a>
+            </li>
+            <li class="nav-item">
+                <%= link_to destroy_pharmacy_session_path, class:"nav-link",
+                    method: :delete do %>
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                <% end %>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="dashboard-body">
+        <%= yield %>
+    </section>
+</main>

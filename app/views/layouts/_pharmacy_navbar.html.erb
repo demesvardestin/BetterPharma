@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="alt-nav">
+    <div class="container">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-link" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <%= current_pharmacy.pharmacy_name %>
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <%= link_to destroy_patient_session_path, class:"dropdown-item", method: :delete do %>
+                                Logout <i class="fas fa-long-arrow-alt-right"></i>
+                            <% end %>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

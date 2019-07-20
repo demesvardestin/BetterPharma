@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
+    <div class="container">
+        <a class="navbar-brand" href="/">Navbar</a>
+        
+        <button class="navbar-toggler bp-navbar-panel-toggler" type="button"
+            onclick="$('.bp-navbar-panel').toggleClass('expanded');">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="bp-navbar-panel">
+            <div class="bp-navbar-panel-header">
+                <span class="close-btn">&times;</span>
+            </div>
+            
+            <div class="bg-navbar-panel-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            How it works
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Pricing
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bp-navbar-panel-footer">
+                <button class="btn btn-primary" onclick="window.location.href='/pharmacies'">
+                    Pharmacies
+                </button>
+                
+                <button class="btn btn-light" onclick="window.location.href='/patients'">
+                    Patients
+                </button>
+            </div>
+        </div>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-link" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="far fa-user-circle"></i>
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <%= link_to destroy_patient_session_path, class:"dropdown-item", method: :delete do %>
+                                Logout <i class="fas fa-long-arrow-alt-right"></i>
+                            <% end %>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript">
+    var navPanelClose = document.querySelector('.bp-navbar-panel .close-btn');
+    navPanelClose.addEventListener('click', e => {
+        $('.bp-navbar-panel').toggleClass('expanded');
+    });
+</script>

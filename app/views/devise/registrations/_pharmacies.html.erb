@@ -1,0 +1,63 @@
+<section id="pharmacy-registration">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <- INSERT ARTWORK/DESIGN/IMAGE HERE ->
+            </div>
+            
+            <div class="col-lg-5" id="form-div">
+                <div class="card box-shadow">
+                    <div class="card-body">
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <div class="field">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label for="pharmacy_owner_first_name">First name</label>
+                                        <%= f.text_field :pharmacy_owner_first_name, autofocus: true, autocomplete: "name",
+                                            class:"form-control", placeholder:"First name" %>
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        <label for="pharmacy_owner_last_name">Last name</label>
+                                        <%= f.text_field :pharmacy_owner_last_name, autofocus: true, autocomplete: "name",
+                                            class:"form-control", placeholder:"Last name" %>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label for="pharmacy_name">Pharmacy name</label>
+                                <%= f.text_field :pharmacy_name, autofocus: true, autocomplete: "name",
+                                    class:"form-control", placeholder:"Pharmacy name" %>
+                            </div>
+                            
+                            <div class="field">
+                                <label for="pharmacy_phone_number">Phone number</label>
+                                <%= f.text_field :pharmacy_phone_number, autofocus: true, autocomplete: "phone_number",
+                                    class:"form-control", placeholder:"Phone number" %>
+                            </div>
+                            
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                    class:"form-control", placeholder:"Email" %>
+                            </div>
+                          
+                            <div class="field">
+                                <label for="password">Password</label>
+                                <%= f.password_field :password, autocomplete: "current-password",
+                                    class:"form-control", placeholder:"Password" %>
+                            </div>
+                          
+                            <div class="actions">
+                                <%= f.submit "Next", class:"btn btn-primary btn-block" %>
+                            </div>
+                        <% end %>
+                        <hr>
+                        <%= render "layouts/terms_acknowledgement" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

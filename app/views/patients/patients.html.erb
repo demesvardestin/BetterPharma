@@ -1,0 +1,37 @@
+<style type="text/css">
+    nav#main-nav {
+        display: none !important;
+    }
+    
+    body {
+        padding-top: 70px !important;
+    }
+</style>
+
+<%= render 'layouts/alt_nav' %>
+
+<section id="patients">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 offset-lg-3">
+                <div class="card">
+                    <a href="/check-status">
+                        <div class="card-body">
+                            <span>Check My Rx Status</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3">
+                <div class="card">
+                    <a href="/request-refill">
+                        <div class="card-body">
+                            <span>Refill an Rx</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

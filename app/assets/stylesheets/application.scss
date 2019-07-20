@@ -1,0 +1,499 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+    overflow-x: hidden !important;
+}
+
+body {
+    color: #737374;
+    overflow-x: hidden !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px;
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh !important;
+    // background-color: #f3f3f4;
+}
+
+#home-banner {
+    background-color: #fff;
+    height: calc(100vh - 100px) !important;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 110px;
+        margin-bottom: 30px;
+    }
+    
+    h4 {
+        margin-bottom: 35px;
+    }
+    
+    .btn {
+        padding-left: 45px;
+        padding-right: 45px;
+        
+        i {
+            margin-left: 15px;
+        }
+    }
+}
+
+nav:not(#alt-nav) {
+    height: 100px;
+    background: #fff !important;
+    
+    li {
+        font-size: 16px !important;
+    }
+    
+    li:not(:last-child) {
+        margin-right: 15px;
+    }
+    
+    li:first-child {
+        margin-left: 45px;
+    }
+    
+    .btn {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    
+    .btn-primary {
+        color: #fff !important;
+    }
+}
+
+.btn-link {
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    color: #cfcfd1;
+}
+
+a.btn-light {
+    border: 0.5px solid #cfcfd1;
+}
+
+.btn:not(.nav-link), .form-control {
+    font-size: 16px !important;
+    height: 50px;
+}
+
+.box-shadow {
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25),
+    0 8px 16px -8px rgba(0,0,0,.3),
+    0 -6px 16px -6px rgba(0,0,0,.025);
+}
+
+a.btn:not(.nav-link) {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.btn, .form-control, .card, .modal-content {
+    border-radius: 3px !important;
+}
+
+.card, .form-control, .btn-white {
+    border: 0.5px solid #e7e7e9 !important;
+}
+
+.form-control, .btn {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.btn-white {
+    background-color: #fff !important;
+    color: #495057 !important;
+}
+
+.dropdown .dropdown-menu {
+    width: 100%;
+    padding: 0;
+    
+    a {
+        padding: 10px 15px;
+    }
+}
+
+.bp-navbar-signup {
+    padding: 0.5rem 1rem;
+}
+
+.bp-navbar-panel {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background-color: #fff;
+    display: none;
+    height: 100vh;
+    transition: 0.25s width;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggler > .fas {
+    font-size: 25px;
+    color: #cfcfd1;
+}
+
+.bp-navbar-panel.expanded {
+    display: block;
+    width: 100%;
+}
+
+.bp-navbar-panel-header {
+    text-align: right;
+    border-bottom: 0.5px solid #e7e7e9;
+    padding: 10px 15px;
+    height: 100px;
+}
+
+.bp-navbar-panel .close-btn {
+    color: #cfcfd1;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.bg-navbar-panel-body {
+    text-align: left;
+    height: 100%;
+    
+    ul {
+        margin-top: 25%;
+    }
+    
+    li {
+        font-size: 30px;
+        padding: 0;
+    }
+    
+    li > a {
+        padding: 0.25em 1em !important;
+    }
+}
+
+.bp-navbar-panel-footer {
+    position: absolute;
+    bottom: 0;
+    padding: 2em;
+    width: 100% !important;
+    
+    button {
+        display: inline-block;
+        width: 47.5%;
+    }
+    
+    button:last-child {
+        margin-left: 3%;
+    }
+}
+
+.card:not(.diff) {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+#patients {
+    height: 100%;
+    padding-top: calc((100vh - 100px - 200px)/2);
+    
+    span {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+    
+    .card-body {
+        height: 200px;
+        cursor: pointer;
+    }
+}
+
+#getting-started {
+    height: 100%;
+    
+    h1 {
+        font-size: 40px;
+        margin-top: 40px;
+    }
+    
+    .row {
+        margin-bottom: 35px;
+    }
+    
+    .card-body {
+        height: 200px;
+        cursor: pointer;
+    }
+}
+
+#request-refill {
+    height: 100%;
+    padding-top: 60px;
+    
+    form {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+.field:not(.login-field) {
+    margin-bottom: 15px;
+}
+
+.actions {
+    margin-top: 15px;
+}
+
+#links {
+    padding-top: 30px;
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 0;
+}
+
+.card-header-container {
+    text-align: center !important;
+    
+    hr {
+        width: 33%;
+        height: 3px;
+        background-color: #b8b8ba;
+        border-color: #b8b8ba;
+    }
+}
+
+a:not(.btn), a:not(.nav-link) {
+    text-decoration: none;
+}
+
+section#login {
+    padding-top: 40px;
+}
+
+#pharmacy-registration {
+    min-height: calc(100vh - 160px);
+    
+    .container {
+        height: 100%;
+    }
+    
+    #form-div {
+        height: 100%;
+    }
+    
+    span {
+        vertical-align: middle !important;
+    }
+}
+
+#side-panel {
+    float: left;
+    height: 100vh;
+    border-right: 0.5px solid #e7e7e9;
+    width: 15%;
+    position: fixed;
+    text-align: left;
+    padding-top: calc(100vh/10);
+    
+    #nav-items {
+        i {
+            margin-right: 10px;
+        }
+    }
+    
+    ul {
+        width: 100%;
+    }
+    
+    li {
+        padding: 0;
+        margin: 0;
+        
+        a {
+            padding: 25px 20px;
+            font-size: 16px;
+            color: #737374;
+        }
+        
+        a:hover, a.active {
+            background-color: #ecf5ff;
+            border-right: 3px solid #007bff;
+        }
+    }
+    
+    #pharmacy-info {
+        text-align: center !important;
+        margin-bottom: 70px;
+        
+        i {
+            font-size: 60px;
+        }
+    }
+    
+    #pharmacy-avatar {
+        margin-bottom: 30px;
+    }
+}
+
+#dashboard-body {
+    float: right;
+    width: 85%;
+    padding: 120px 60px;
+    
+    .alert-col {
+        padding: 15px;
+        background-color: #f3f3f4;
+        border-bottom: 1px solid #eeeeef;
+        
+    }
+    
+    span:not(:last-child) {
+        margin-right: 45px;
+    }
+    
+    #analytics-snapshot {
+        h5 {
+            font-size: 16px;
+            
+            span {
+                font-size: 13px;
+            }
+        }
+        
+        #snapshot-cards-row {
+            margin-top: -100px;
+            
+            .card {
+                height: 100%;
+                text-align: center;
+                box-shadow: 0 13px 27px -5px rgba(50,50,93,.25),
+                0 8px 16px -8px rgba(0,0,0,.3),
+                0 -6px 16px -6px rgba(0,0,0,.025);
+                
+                p{
+                    font-size: 25px;
+                    color: #007bff;
+                    font-weight: 700;
+                    
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* DEVICE-SPECIFIC RULES */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 812px) {
+    
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    nav {
+        border-bottom: 0.5px solid #e7e7e9;
+        background-color: #fff !important;
+    }
+    
+    body {
+        background-color: #f3f3f4;
+    }
+    
+    #home-banner {
+        background-color: #f3f3f4;
+        
+        h1 {
+            margin-top: 40px;
+        }
+        
+        a.btn {
+            display: block;
+            padding: 15px;
+        }
+    }
+    
+    html, body {
+        overflow-x: hidden !important;
+    }
+    
+    #getting-started {
+        h1 {
+            margin-top: 10px;
+        }
+    }
+    
+    #patients {
+        padding-top: calc((100vh - 100px - 400px)/4);
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1024px) {
+    #home-banner {
+        background-color: #fff;
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+    
+    nav {
+        li:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    
+    .container {
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}

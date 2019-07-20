@@ -1,0 +1,43 @@
+<style type="text/css">
+    nav#main-nav {
+        display: none !important;
+    }
+    
+    body {
+        padding-top: 70px !important;
+    }
+</style>
+
+<%= render 'layouts/alt_nav' %>
+
+<section id="request-refill">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <div class="card-header-container">
+                    <h3>Check rx status</h3>
+                    <hr>
+                </div>
+                
+                <form id="refill-request-form" action="/submit_refill_request" method="post">
+                    <div class="field">
+                        <input type="text" class="form-control"
+                            placeholder="Search pharmacy" name="pharmacy"
+                            id="pharmacy">
+                    </div>
+                    
+                    <div class="field">
+                        <input type="text" class="form-control"
+                            placeholder="Rx number" name="rx_number"
+                            id="rx_number">
+                    </div>
+                    
+                    <div class="actions">
+                        <input type="submit" class="btn btn-primary btn-block"
+                            value="Check status">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

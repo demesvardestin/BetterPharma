@@ -1,0 +1,58 @@
+<style type="text/css">
+    nav#main-nav {
+        height: 80px !important;
+    }
+    
+    body {
+        padding-top: 70px !important;
+    }
+</style>
+
+
+<section id="request-refill">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <div class="card-header-container">
+                    <h3>Request a refill</h3>
+                    <hr>
+                </div>
+                
+                <form id="refill-request-form" action="/submit_refill_request" method="post">
+                    <div class="field">
+                        <input type="text" class="form-control"
+                            placeholder="Search pharmacy" name="pharmacy"
+                            id="pharmacy">
+                    </div>
+                    
+                    <div class="field">
+                        <input type="text" class="form-control"
+                            placeholder="Rx number" name="rx_number"
+                            id="rx_number">
+                    </div>
+                    
+                    <div class="field">
+                        <input type="hidden" placeholder="Delivery method"
+                            name="delivery_method" id="delivery_method">
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary btn-block btn-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select a delivery method
+                                <i class="fas fa-angle-down"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <input type="submit" class="btn btn-primary btn-block" value="Submit request">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

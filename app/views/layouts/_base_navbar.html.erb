@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
+    <div class="container">
+        <a class="navbar-brand" href="/">Navbar</a>
+        
+        <button class="navbar-toggler bp-navbar-panel-toggler" type="button"
+            onclick="$('.bp-navbar-panel').toggleClass('expanded');">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="bp-navbar-panel">
+            <div class="bp-navbar-panel-header">
+                <span class="close-btn">&times;</span>
+            </div>
+            
+            <div class="bg-navbar-panel-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            How it works
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Pricing
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bp-navbar-panel-footer">
+                <button class="btn btn-primary" onclick="window.location.href='/pharmacies'">
+                    Pharmacies
+                </button>
+                
+                <button class="btn btn-light" onclick="window.location.href='/patients'">
+                    Patients
+                </button>
+            </div>
+        </div>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/demo">
+                        How it works
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/pricing">
+                        Pricing
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary" href="/pharmacies">
+                        For Pharmacies
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link btn btn-light" href="/patients">
+                        For Patients
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript">
+    var navPanelClose = document.querySelector('.bp-navbar-panel .close-btn');
+    navPanelClose.addEventListener('click', e => {
+        $('.bp-navbar-panel').toggleClass('expanded');
+    });
+</script>
