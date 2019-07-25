@@ -1,0 +1,3 @@
+<%= line_chart @patient_alerts.group(:resolved).group_by_year(:created_at).count,
+    id: "overview-chart", curve: false, messages: { empty: "No chart data available yet" },
+    points: false, legend: false %>

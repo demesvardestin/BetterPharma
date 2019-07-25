@@ -1,0 +1,104 @@
+<section id="analytics-snapshot">
+    <div class="card">
+        <div class="card-body">
+            <div class="row" id="snapshot-cards-row">
+                <div class="card diff">
+                    <div class="card-body">
+                        <h6>
+                            <i class="fas fa-receipt"></i> Received
+                            <hr>
+                        </h6>
+                        <p>
+                            <%= alerts_received %>
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card diff">
+                    <div class="card-body">
+                        <h6>
+                            <i class="fas fa-clipboard-check"></i> Resolved
+                            <hr>
+                        </h6>
+                        <p>
+                            <%= alerts_resolved %>
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card diff">
+                    <div class="card-body">
+                        <h6>
+                            <i class="fas fa-bolt"></i> Resp. Rate
+                            <hr>
+                        </h6>
+                        <p>
+                            <%= response_rate %>
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card diff">
+                    <div class="card-body">
+                        <h6>
+                            <i class="far fa-clock"></i> Responsivity
+                            <hr>
+                        </h6>
+                        <p class="diff">
+                            <%= responsiveness %>
+                            <span class="hrs">
+                                mns
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <section id="chart-section">
+                <div id="chart-box" class="chart-box active">
+                    <%= render "main/pharmacies/charts/day" %>
+                </div>
+                
+                <div id="chart-controls">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <%= link_to load_chart_path(:period => "day"), id:"day", class:"nav-link active",
+                                remote: true, onclick:"$('#chart-controls .nav-link.active').toggleClass('active');
+                                        $(`#${this.id}`).toggleClass('active');
+                                        $(`#${this.id}-chart`).toggleClass('active');" do %>
+                                Day     
+                            <% end %>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <%= link_to load_chart_path(:period => "week"), id:"week", class:"nav-link",
+                                remote: true, onclick:"$('#chart-controls .nav-link.active').toggleClass('active');
+                                        $(`#${this.id}`).toggleClass('active');
+                                        $(`#${this.id}-chart`).toggleClass('active');" do %>
+                                Week    
+                            <% end %>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <%= link_to load_chart_path(:period => "month"), id:"month", class:"nav-link",
+                                remote: true, onclick:"$('#chart-controls .nav-link.active').toggleClass('active');
+                                        $(`#${this.id}`).toggleClass('active');
+                                        $(`#${this.id}-chart`).toggleClass('active');" do %>
+                                Month    
+                            <% end %>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <%= link_to load_chart_path(:period => "year"), id:"year", class:"nav-link",
+                                remote: true, onclick:"$('#chart-controls .nav-link.active').toggleClass('active');
+                                        $(`#${this.id}`).toggleClass('active');
+                                        $(`#${this.id}-chart`).toggleClass('active');" do %>
+                                Year     
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

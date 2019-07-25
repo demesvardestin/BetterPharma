@@ -1,43 +1,106 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section id="edit-pharmacy">        
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card box-shadow" id="settings-navigation-card">
+                <div class="card-body">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" href="/pharmacy/settings">
+                                Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" onclick="toggleNav(this, 'notifications')">
+                                Notifications
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" onclick="toggleNav(this, 'billing')">
+                                Billing
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer active" href="/password/settings">
+                                Security
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" onclick="toggleNav(this, 'help')">
+                                Help
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 offset-md-1">
+            <div class="card" id="settings-content-card">
+                <div class="card-body">
+                    <div id="tab-account" class="tab">
+                        <h5 class="text-center">Account Settings</h5>
+                        <hr>
+                    </div>
+                    
+                    <div id="tab-notifications" class="tab">
+                        <h5 class="text-center">Notification Settings</h5>
+                        <hr>
+                    </div>
+                    
+                    <div id="tab-billing" class="tab">
+                        <h5 class="text-center">Billing Settings</h5>
+                        <hr>
+                    </div>
+                    
+                    <div id="tab-security" class="tab active">
+                        <h5 class="text-center">Security Settings</h5>
+                        <hr>
+                        
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                          <%= render "devise/shared/error_messages", resource: resource %>
+                          
+                          <div class="field">
+                            <%= f.label :email %><br />
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", value:"#{current_pharmacy.email}" %>
+                          </div>
+                          
+                          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                          <% end %>
+                          
+                          <div class="field">
+                            <%= f.label :current_password %><br />
+                            <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Current Password" %>
+                          </div>
+                        
+                          <div class="field">
+                            <%= f.label :new_password %>
+                            <% if @minimum_password_length %>
+                              <em><%= @minimum_password_length %> characters minimum</em>
+                            <% end %><br />
+                            <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"New Password" %>
+                          </div>
+                        
+                          <div class="actions">
+                            <%= f.submit "Update Password Settings", class:"btn btn-primary btn-block", data: { :disable_with => "Updating..." } %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    
+                    <div id="tab-help" class="tab">
+                        <h5 class="text-center">Help Center</h5>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<script type="text/javascript">
+    toggleNav = (elem, tab) => {
+        $('a.active, .tab.active').toggleClass('active');
+        elem.classList.add('active');
+        $(`#tab-${tab}`).toggleClass('active')
+    };
+</script>

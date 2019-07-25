@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190718160716) do
+ActiveRecord::Schema.define(version: 20190721161038) do
+
+  create_table "patient_alerts", force: :cascade do |t|
+    t.string   "alert_type"
+    t.string   "notification_endpoint"
+    t.integer  "pharmacy_id"
+    t.string   "evaluation_number"
+    t.boolean  "resolved",              default: false
+    t.string   "status"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
 
   create_table "patients", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -95,14 +95,12 @@ a.btn-light {
 }
 
 .btn:not(.nav-link), .form-control {
-    font-size: 16px !important;
+    font-size: 16px;
     height: 50px;
 }
 
 .box-shadow {
-    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25),
-    0 8px 16px -8px rgba(0,0,0,.3),
-    0 -6px 16px -6px rgba(0,0,0,.025);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
 
 a.btn:not(.nav-link) {
@@ -128,12 +126,16 @@ a.btn:not(.nav-link) {
     color: #495057 !important;
 }
 
-.dropdown .dropdown-menu {
+.dropdown-menu {
     width: 100%;
     padding: 0;
     
     a {
-        padding: 10px 15px;
+        padding: 15px 15px;
+    }
+    
+    a:not(:last-child) {
+        border-bottom: 0.5px solid #e7e7e9;
     }
 }
 
@@ -324,7 +326,7 @@ section#login {
     width: 15%;
     position: fixed;
     text-align: left;
-    padding-top: calc(100vh/10);
+    padding-top: calc(100vh/12);
     
     #nav-items {
         i {
@@ -342,7 +344,7 @@ section#login {
         
         a {
             padding: 25px 20px;
-            font-size: 16px;
+            font-size: 15px;
             color: #737374;
         }
         
@@ -354,7 +356,8 @@ section#login {
     
     #pharmacy-info {
         text-align: center !important;
-        margin-bottom: 70px;
+        padding-bottom: 50px;
+        border-bottom: 0.5px solid #e7e7e9;
         
         i {
             font-size: 60px;
@@ -369,7 +372,10 @@ section#login {
 #dashboard-body {
     float: right;
     width: 85%;
-    padding: 120px 60px;
+    padding-top: calc(100vh/12);
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 40px;
     
     .alert-col {
         padding: 15px;
@@ -383,6 +389,8 @@ section#login {
     }
     
     #analytics-snapshot {
+        padding-top: calc(100vh/12 + 30px);
+        
         h5 {
             font-size: 16px;
             
@@ -391,20 +399,37 @@ section#login {
             }
         }
         
+        #chart-section {
+            justify-content: center;
+            
+            #chart-controls {
+                margin-top: 30px;
+            }
+        }
+        
         #snapshot-cards-row {
-            margin-top: -100px;
+            margin-top: -120px;
+            margin-bottom: 40px;
+            padding: 0 10%;
+            justify-content: center;
+            align-items: justify;
+            text-align: center;
             
             .card {
                 height: 100%;
+                width: 20%;
                 text-align: center;
-                box-shadow: 0 13px 27px -5px rgba(50,50,93,.25),
-                0 8px 16px -8px rgba(0,0,0,.3),
-                0 -6px 16px -6px rgba(0,0,0,.025);
+                box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+                margin-right: 15px;
                 
-                p{
+                h6 {
+                    font-size: 12px !important;
+                    text-transform: uppercase;
+                }
+                
+                p {
                     font-size: 25px;
                     color: #007bff;
-                    font-weight: 700;
                     
                     span {
                         font-size: 14px !important;
@@ -413,6 +438,125 @@ section#login {
             }
         }
     }
+    
+    #chart-div {
+        width: 100%;
+        justify-content: center !important;
+        
+        div[dir="ltr"] {
+            text-align: center !important;
+        }
+    }
+}
+
+.status-request-card, .status-request-card .card-body {
+    text-align: center !important;
+    border-radius: 0 !important;
+    
+    span, span > button {
+        font-size: 14px !important;
+    }
+    
+    button {
+        height: 38px !important;
+        background-color: transparent;
+    }
+    
+    button:hover {
+        color: #fff;
+        background-color: #007bff;
+    }
+    
+    .btn-primary {
+        color: #007bff;
+    }
+    
+    span:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+
+.status-request-card:first-child {
+    border-top-left-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+}
+
+.status-request-card:not(:last-child) {
+    border-bottom: none !important;
+}
+
+.status-request-card:last-child {
+    border-bottom-left-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
+}
+
+.card.request-number {
+    margin-bottom: 20px;
+    font-size: 60px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+#settings-navigation-card {
+    
+    li:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    
+    a.active {
+        color: #fff;
+    }
+}
+
+#settings-content-card {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+    .card-body {
+        padding-bottom: 50px;
+    }
+}
+
+.tab:not(.active), .chart-box:not(.active) {
+    display: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#chart-controls {
+    
+    .nav-item:not(:last-child) {
+        margin-right: 15px;
+    }
+    
+    .nav-link {
+        border-radius: 20px;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+    
+    .nav-link.active {
+        background-color: #007bff;
+        color: #fff;
+    }
+}
+
+.green {
+    color: #28a745;
+}
+
+.yellow {
+    color: #d39e00;
+}
+
+.blue {
+    color: #007bff
+}
+
+.red {
+    color: #dc3545;
 }
 
 
@@ -470,10 +614,39 @@ section#login {
     #patients {
         padding-top: calc((100vh - 100px - 400px)/4);
     }
+    #side-panel {
+        display: none;
+    }
+    
+    #dashboard-body {
+        width: 100%;
+        padding-top: calc(100vh/8);
+        padding-bottom: 40px;
+    }
+    
+    #snapshot-cards-row {
+        padding: 0;
+        
+        .card {
+            height: 100%;
+            width: 30%;
+        }
+    }
 } 
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    #side-panel {
+        width: 20%;
+    }
+    
+    #dashboard-body {
+        width: 80%;
+    }
+    
+    #snapshot-cards-row {
+        padding: 0 1% !important;
+    }
+    
     #home-banner {
         background-color: #fff;
         width: 100%;
@@ -494,6 +667,6 @@ section#login {
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1499.5px) {
     
 }

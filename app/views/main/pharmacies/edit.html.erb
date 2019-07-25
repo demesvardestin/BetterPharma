@@ -1,0 +1,77 @@
+<section id="edit-pharmacy">        
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card box-shadow" id="settings-navigation-card">
+                <div class="card-body">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer active" onclick="toggleNav(this, 'account')">
+                                Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" onclick="toggleNav(this, 'notifications')">
+                                Notifications
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" onclick="toggleNav(this, 'billing')">
+                                Billing
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" href="/password/settings">
+                                Security
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cursor-pointer" onclick="toggleNav(this, 'help')">
+                                Help
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 offset-md-1">
+            <div class="card" id="settings-content-card">
+                <div class="card-body">
+                    <div id="tab-account" class="tab active">
+                        <h5 class="text-center">Account Settings</h5>
+                        <hr>
+                        
+                        <%= render "form" %>
+                    </div>
+                    
+                    <div id="tab-notifications" class="tab">
+                        <h5 class="text-center">Notification Settings</h5>
+                        <hr>
+                    </div>
+                    
+                    <div id="tab-billing" class="tab">
+                        <h5 class="text-center">Billing Settings</h5>
+                        <hr>
+                    </div>
+                    
+                    <div id="tab-security" class="tab">
+                        <h5 class="text-center">Security Settings</h5>
+                        <hr>
+                    </div>
+                    
+                    <div id="tab-help" class="tab">
+                        <h5 class="text-center">Help Center</h5>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    toggleNav = (elem, tab) => {
+        $('a.active, .tab.active').toggleClass('active');
+        elem.classList.add('active');
+        $(`#tab-${tab}`).toggleClass('active')
+    };
+</script>

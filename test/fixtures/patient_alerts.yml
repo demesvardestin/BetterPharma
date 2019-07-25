@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alert_type: MyString
+  patient_notification_endpoint: MyString
+  pharmacy_id: 1
+  rx_number: MyString
+  resolved: false
+
+two:
+  alert_type: MyString
+  patient_notification_endpoint: MyString
+  pharmacy_id: 1
+  rx_number: MyString
+  resolved: false
