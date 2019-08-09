@@ -1,0 +1,2 @@
+class MobileClient < ApplicationRecord
+end

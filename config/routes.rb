@@ -11,18 +11,6 @@ Rails.application.routes.draw do
     root 'main/pharmacies#dashboard', as: :authenticated_pharmacy_root
   end
   
-  devise_for :patients, :controllers => { :registrations => "authentication/patients/registrations" }
-  devise_scope :patient do
-    get '/patient/login', to: 'devise/sessions#new'
-    get '/patient/signup', to: 'devise/registrations#new'
-    get '/password/settings', to: 'authentication/patients/registrations#edit'
-    get '/retrieve/password', to: 'devise/passwords#new'
-  end
-  authenticated :patient do
-    root 'patients#dashboard', as: :authenticated_patient_root
-  end
-  
-  
   scope module: "main" do
     get '/check-status', to: 'patients#check_status'
     get '/request-refill', to: 'patients#request_refill'
@@ -39,7 +27,13 @@ Rails.application.routes.draw do
   end
   
   namespace :api do
-    get '/twilio_trigger', to: 'api#twilio_trigger'
+    post '/twilio_trigger', to: 'central#twilio_trigger'
+    post '/twilio_trigger_callback', to: 'central#twilio_trigger'
+    post '/save_subscription', to: 'central#save_subscription'
+  end
+  
+  namespace :simulator do
+    get '/', to: 'testing#home'
   end
   
   resources :pharmacies, except: :index

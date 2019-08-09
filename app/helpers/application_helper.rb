@@ -1,8 +1,6 @@
 module ApplicationHelper
     def navbar
-        if current_patient
-            "layouts/patient_navbar"
-        elsif current_pharmacy
+        if current_pharmacy
             "layouts/pharmacy_navbar"
         else
             "layouts/base_navbar"
@@ -10,9 +8,7 @@ module ApplicationHelper
     end
     
     def body
-        if current_patient
-            "layouts/patient_body"
-        elsif current_pharmacy
+        if current_pharmacy
             "layouts/pharmacy_body"
         else
             "layouts/base_body"
@@ -20,7 +16,7 @@ module ApplicationHelper
     end
     
     def footer
-        if current_patient || current_pharmacy
+        if current_pharmacy
             "layouts/no_footer"
         else
             "layouts/footer"

@@ -1,7 +1,7 @@
 <section id="edit-pharmacy">        
     <div class="row">
         <div class="col-lg-4">
-            <div class="card box-shadow" id="settings-navigation-card">
+            <div class="card " id="settings-navigation-card">
                 <div class="card-body">
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
@@ -46,6 +46,37 @@
                     <div id="tab-notifications" class="tab">
                         <h5 class="text-center">Notification Settings</h5>
                         <hr>
+                        
+                        <p>
+                            <span>
+                                Screen notifications (required)
+                            </span>
+                            <label class="switch">
+                                <input type="checkbox" id="screen-notifications"
+                                    onclick="requestPermission(this)">
+                                <span class="slider round"></span>
+                            </label>
+                        </p>
+                        
+                        <p>
+                            <span>
+                                Email notifications
+                            </span>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </p>
+                        
+                        <p>
+                            <span>
+                                Promotional emails
+                            </span>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </p>
                     </div>
                     
                     <div id="tab-billing" class="tab">
@@ -74,4 +105,13 @@
         elem.classList.add('active');
         $(`#tab-${tab}`).toggleClass('active')
     };
+    
+    requestPermission = (elem) => {
+        var checked = elem.getAttribute('checked');
+        if (checked == null) { // previously unchecked. now checked
+            askPermission();
+        } else {
+            // revoke permission
+        }
+    }
 </script>

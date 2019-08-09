@@ -26,7 +26,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'chartkick'
 gem 'groupdate'
-gem 'twilio'
+gem 'twilio-ruby'
+gem 'pusher'
+gem 'rb-readline'
+gem 'fuzzy_match'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

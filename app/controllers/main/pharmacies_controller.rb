@@ -35,7 +35,7 @@ class Main::PharmaciesController < ApplicationController
       format.js { render :layout => false, notice: "Update sent!" }
       
       ## send update
-      Notifier.alert_mobile_client(@alert.notification_endpoint)
+      TwilioHandler.alert_mobile_client(@alert)
     end
   end
   

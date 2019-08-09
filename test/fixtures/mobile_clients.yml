@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subscription_auth: MyString
+  subscription_p256dh: MyString
+  subscribed_to_push_notifications: false
+
+two:
+  subscription_auth: MyString
+  subscription_p256dh: MyString
+  subscribed_to_push_notifications: false

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190721161038) do
+ActiveRecord::Schema.define(version: 20190803191902) do
+
+  create_table "mobile_clients", force: :cascade do |t|
+    t.string   "subscription_auth"
+    t.string   "subscription_p256dh"
+    t.boolean  "subscribed_to_push_notifications", default: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+  end
 
   create_table "patient_alerts", force: :cascade do |t|
     t.string   "alert_type"
@@ -37,17 +45,21 @@ ActiveRecord::Schema.define(version: 20190721161038) do
   end
 
   create_table "pharmacies", force: :cascade do |t|
-    t.string   "email",                     default: "", null: false
-    t.string   "encrypted_password",        default: "", null: false
+    t.string   "email",                            default: "",    null: false
+    t.string   "encrypted_password",               default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "pharmacy_name"
     t.string   "pharmacy_owner_first_name"
     t.string   "pharmacy_owner_last_name"
     t.string   "pharmacy_phone_number"
+    t.string   "subscription_auth"
+    t.string   "subscription_p256dh"
+    t.boolean  "promotional_email_notifications",  default: true
+    t.boolean  "subscribed_to_push_notifications", default: false
     t.index ["email"], name: "index_pharmacies_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pharmacies_on_reset_password_token", unique: true
   end
